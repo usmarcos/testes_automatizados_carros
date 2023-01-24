@@ -1,0 +1,107 @@
+Dado (Given)
+Quando (When)
+Então (Then)
+
+* Enquanto o carro estiver desligado deve ser capaz de:
+     *  - Ligar
+     *  - Mostrar estado atual -> toString()
+
+* Enquanto o carro estiver ligado deve ser capaz de:
+     * - Desligar -> isLigado = false
+     * - Acelerar -> setVelocidadeAtual(...)
+     * - Frear -> setVelocidadeAtual(...)
+     * - Mostrar estado atual -> toString()
+
+----------------------------------------
+Cenário 1
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Ligar o carro
+    - E acelerar o carro
+Então (Then)
+    - Velocidade do carro deverá ser 10km/h
+----------------------------------------
+Cenário 2
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Acelerar o carro
+Então (Then)
+    - Velocidade do carro deverá ser 0km/h
+----------------------------------------
+Cenário 3
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Ligar o carro
+    - E acelerar o carro
+    - E freiar o carro duas vezes
+Então (Then)
+    - A velocidade do carro deverá ser 0km/h
+----------------------------------------
+Cenário 4
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Ligar o carro
+    - E acelerar o carro
+    - E desligar o carro
+Então (Then)
+    - O carro deverá continuar ligado
+----------------------------------------
+Cenário 5
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Desligar o carro
+    - E desligar o carro
+Então (Then)
+    - O carro deverá permancer desligado
+----------------------------------------
+Cenário 6
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Acelerar o carro
+Então (Then)
+    - A velocidade do carro deverá ser 0km/h
+----------------------------------------
+Cenário 7
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Ligar o carro
+    - E ligar o carro
+Então (Then)
+    - O carro deverá permanecer ligado
+----------------------------------------
+Cenário 9
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Ligar o carro
+    - E acelerar o carro
+    - E freiar o carro
+Então (Then)
+    - A velocidade do carro deverá ser 0km/h
+----------------------------------------
+Cenário 10
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Mostrar estado atual do carro
+Então (Then)
+    - Deve mostrar as caracteristicas do carro (marca, modelo, cor, potencia, isLigado, velocidadeAtual, velocidadeMaxima)
+----------------------------------------
+Cenário 11
+Dado (Given)
+    - Um carro com potência 10
+Quando (When)
+    - Ligar o carro
+    - E acelerar o carro 1 vezes
+    - E freiar o carro 2 vezes
+    - E acelerar o carro
+Então (Then)
+    - A velocidade do carro deverá ser 10km/h
+----------------------------------------
