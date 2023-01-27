@@ -1,4 +1,5 @@
 import model.Carro;
+import org.junit.jupiter.api.Test;
 import service.CarroService;
 import service.CarroServiceImpl;
 
@@ -13,7 +14,7 @@ public class Main {
         Carro carro01 = new Carro("Marca 01", "Modelo01", "Cor01", 10, 100);
         //Quando
         carroService1.ligar(carro01);
-        carroService1.acelerar(carro01);
+        carroService1.acelerar(carro01,10);
         //Então
         System.out.println("Resultado do cenário 01: "+ (carro01.getVelocidadeAtual() == 10));
 
@@ -23,9 +24,9 @@ public class Main {
         Carro carro02 = new Carro("Marca 02", "Modelo02", "Cor02", 10, 100);
         //Quando
         carroService2.ligar(carro02);
-        carroService2.acelerar(carro02);
-        carroService2.acelerar(carro02);
-        carroService2.frear(carro02);
+        carroService2.acelerar(carro02,10);
+        carroService2.acelerar(carro02,10);
+        carroService2.frear(carro02,10);
         //Então
         System.out.println("Resultado do cenário 02: "+ (carro02.getVelocidadeAtual() == 10));
 
@@ -35,14 +36,14 @@ public class Main {
         Carro carro03 = new Carro("Marca 03", "Modelo03", "Cor03", 10, 100);
         //Quando
         //Então
-        System.out.println("Resultado do cenário 03: "+ (carro03.getLigado() == false));
+        System.out.println("Resultado do cenário 03: "+ (carro03.isLigado() == false));
 
         /**Cenário 04: Não deve acelerar desligado*/
         //Dado
         CarroService carroService4 = new CarroServiceImpl();
         Carro carro04 = new Carro("Marca 04", "Modelo04", "Cor04", 10, 100);
         //Quando
-        carroService4.acelerar(carro04);
+        carroService4.acelerar(carro04,10);
         //Então
         System.out.println("Resultado do cenário 04: "+ (carro04.getVelocidadeAtual() == 0));
 
@@ -52,7 +53,7 @@ public class Main {
         Carro carro05 = new Carro("Marca 05", "Modelo05", "Cor05", 10, 100);
         //Quando
         carroService5.ligar(carro05);
-        carroService5.frear(carro05);
+        carroService5.frear(carro05,10);
         //Então
         System.out.println("Resultado do cenário 05: "+ (carro05.getVelocidadeAtual() == 0));
 

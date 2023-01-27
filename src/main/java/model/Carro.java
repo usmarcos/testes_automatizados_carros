@@ -1,24 +1,30 @@
 package model;
 
 public class Carro {
+    private String cor;
     private String marca;
     private String modelo;
-    private String cor;
-    //sempre que acelerar será com base na potencia
-    private Integer potencia;
-    private Boolean isLigado;
-    private Integer velocidadeAtual;
-    private Integer velocidadeMaxima;
+    private int ano;
+    private boolean ligado;
+    private int velocidadeAtual;
+    private int velocidadeMaxima;
 
-    public Carro(String marca, String modelo, String cor, Integer potencia, Integer velocidadeMaxima) {
-        //todos carros serão criados desligados a velocidade 0
+    public Carro(String cor, String marca, String modelo, int ano, int velocidadeMaxima) {
+        this.cor = cor;
         this.marca = marca;
         this.modelo = modelo;
-        this.cor = cor;
-        this.potencia = potencia;
-        this.isLigado = false;
+        this.ano = ano;
+        this.ligado = false;
         this.velocidadeAtual = 0;
         this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
     public String getMarca() {
@@ -37,46 +43,48 @@ public class Carro {
         this.modelo = modelo;
     }
 
-    public String getCor() {
-        return cor;
+    public int getAno() {
+        return ano;
     }
 
-    public void setCor(String cor) {
-        this.cor = cor;
+    public void setAno(int ano) {
+        this.ano = ano;
     }
 
-    public Integer getPotencia() {
-        return potencia;
+    public boolean isLigado() {
+        return ligado;
     }
 
-    public void setPotencia(Integer potencia) {
-        this.potencia = potencia;
+    public void setLigado(boolean ligado) {
+        this.ligado = ligado;
     }
 
-    public Boolean getLigado() {
-        return isLigado;
+    public int getVelocidadeAtual() {
+        return velocidadeAtual;
     }
 
-    public void setLigado(Boolean ligado) {
-        isLigado = ligado;
-    }
-
-    public Integer getVelocidadeAtual() { return velocidadeAtual; }
-
-    public void setVelocidadeAtual(Integer velocidadeAtual) {
+    public void setVelocidadeAtual(int velocidadeAtual) {
         this.velocidadeAtual = velocidadeAtual;
     }
 
-    public Integer getVelocidadeMaxima() {
+    public int getVelocidadeMaxima() {
         return velocidadeMaxima;
     }
 
-    public void setVelocidadeMaxima(Integer velocidadeMaxima) {
+    public void setVelocidadeMaxima(int velocidadeMaxima) {
         this.velocidadeMaxima = velocidadeMaxima;
     }
 
     @Override
     public String toString() {
-        return "Carro{" + "marca='" + marca + '\'' + ", modelo='" + modelo + '\'' + ", cor='" + cor + '\'' + ", potencia=" + potencia + ", isLigado=" + isLigado + ", velocidadeAtual=" + velocidadeAtual + ", velocidadeMaxima=" + velocidadeMaxima + '}';
+        return "Carro{" +
+                "cor='" + cor + '\'' +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", ano='" + ano + '\'' +
+                ", ligado=" + ligado +
+                ", velocidadeAtual=" + velocidadeAtual +
+                ", velocidadeMaxima=" + velocidadeMaxima +
+                '}';
     }
 }
